@@ -1,21 +1,20 @@
-# Features & Roadmap : Portman
+# Features & Roadmap: Portman
 
-## 🚀 Fonctionnalités Développées
-- [x] Initialisation de l'application TUI (Go + Bubble Tea).
-- [x] Parsing asynchrone basique des ports TCP/UDP avec `lsof`.
-- [x] Définition des compétences des agents (Kill, Firewall, NetScanner).
-- [x] Catégorisation des processus (`System`, `Apps`, `Network`, `Dev`, `Other`).
-- [x] UI avancée : Onglets (Tabs) de filtrage par catégorie.
-- [x] UI avancée : Barre de recherche interactive.
-- [x] UI avancée : Ajout de la colonne d'adresse IP (`Address`) et date de démarrage (`Started`).
-- [x] Sauvegarde persistante des processus favoris dans `~/.portman.json`.
-- [x] Terminaison de processus (kill) simple ou multiple depuis l'UI.
-- [x] Détection automatique des conflits de ports (Address already in use).
-- [x] Raccourci pour ouvrir directement un port dans le navigateur local.
+## 🚀 Completed Features
+- [x] Initialization of the TUI application (Go + Bubble Tea).
+- [x] Cross-platform asynchronous parsing of TCP/UDP ports.
+- [x] Definition of agent skills (Kill, Firewall, NetScanner).
+- [x] Process categorization (`System`, `Apps`, `Network`, `Dev`, `Other`).
+- [x] Advanced UI: Filtering tabs by category.
+- [x] Advanced UI: Interactive search bar.
+- [x] Advanced UI: Added IP address (`Address`) and startup date (`Started`) columns.
+- [x] Persistent storage for favorite processes.
+- [x] Single or multiple process termination (kill) from the UI.
+- [x] Automatic detection of port conflicts (Address already in use).
+- [x] Shortcut to directly open a port in the local web browser.
 
-## 🚧 En Cours de Développement
-- [ ] Intégration de `pfctl` pour bloquer/débloquer un port directement depuis l'UI.
 
-## 🗺️ Roadmap (À Venir)
-- [ ] Support d'IPv6 (Affichage différencié).
-- [ ] Exportation de la liste des ports en JSON ou CSV.
+## 🗺️ Roadmap (Upcoming)
+- [ ] Integration of the firewall to block/unblock a port directly from the UI.
+- [ ] IPv6 support (differentiated display).
+- [ ] Export port list to JSON or CSV.

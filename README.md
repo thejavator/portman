@@ -2,18 +2,18 @@
 
 **Postman manages your requests, Portman manages your ports.**
 
-Portman is an advanced, terminal-based User Interface (TUI) for **macOS** and **Linux**, built with Go and Bubble Tea. It provides a robust, fast, and visual way to manage active processes, network ports, and the system firewall.
+Portman is an advanced, terminal-based User Interface (TUI) for **macOS** and **Linux**, built with Go and Bubble Tea. It provides a robust, fast, and visual way to manage active processes and network ports.
 
-![Portman TUI](https://raw.githubusercontent.com/thejavator/portman/main/assets/demo.png) *(Add a screenshot here)*
+![Portman TUI](./assets/demo.png)
 
 ## Features
 
-- **Process & Port Tracking**: Instantly view all open ports and their associated processes.
-- **Categorization**: Automatically categorizes ports into System, Apps, Network, Dev, and Other.
-- **Favorites Management**: Save important processes (e.g., `docker`, `postgres`) to a favorites list persistently stored in `~/.config/portman/config.json`.
-- **Process Killing**: Kill rogue or stuck processes directly from the UI.
-- **Browser Integration**: Open local HTTP services directly in your default browser.
-- **Firewall Integration**: Integrated rules management to block specific ports effortlessly (uses `pfctl` on macOS, `iptables` on Linux).
+- [x] **Process & Port Tracking**: Instantly view all open ports and their associated processes.
+- [x] **Categorization**: Automatically categorizes ports into System, Apps, Network, Dev, and Other.
+- [x] **Favorites Management**: Save important processes (e.g., `docker`, `postgres`) to a favorites list persistently stored in `~/.config/portman/config.json`.
+- [x] **Process Killing**: Kill rogue or stuck processes directly from the UI.
+- [x] **Browser Integration**: Open local HTTP services directly in your default browser.
+- [ ] **Firewall Integration**: Integrated rules management to block specific ports effortlessly (uses `pfctl` on macOS, `iptables` on Linux).
 
 ## Installation
 
@@ -28,7 +28,7 @@ curl -sSL https://raw.githubusercontent.com/thejavator/portman/main/install.sh |
 ### macOS (Homebrew)
 
 ```bash
-brew tap thejavator/portman
+brew tap thejavator/portman https://github.com/thejavator/portman
 brew install portman
 ```
 
