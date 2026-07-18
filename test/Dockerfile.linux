@@ -1,0 +1,22 @@
+FROM golang:1.24-bookworm
+
+# Installer iptables et quelques services pour simuler des ports ouverts
+RUN apt-get update && apt-get install -y \
+    iptables iproute2 psmisc net-tools \
+    nginx python3 netcat-openbsd \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copier les fichiers de module et télécharger les dépendances
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copier le reste du code source
+COPY . .
+
+# Compiler l'application pour Linux
+RUN go build -o portman .
+
+# Le TUI nécessite un terminal interactif, on définit l'entrypoint qui lance les services puis portman
+CMD ["./entrypoint.sh"]
