@@ -16,11 +16,12 @@ type detailsLoadedMsg system.ProcessDetails
 
 // Model represents the application state
 type Model struct {
-	width    int
-	height   int
-	ports    []system.PortInfo
-	selected int
-	loading  bool
+	width      int
+	height     int
+	ports      []system.PortInfo
+	selected   int
+	loading    bool
+	appVersion string
 
 	activeTab int
 	searchBar textinput.Model
@@ -33,7 +34,7 @@ type Model struct {
 }
 
 // InitialModel initializes the state
-func InitialModel() Model {
+func InitialModel(version string) Model {
 	cfg := config.LoadConfig()
 	
 	ti := textinput.New()
@@ -42,9 +43,10 @@ func InitialModel() Model {
 	ti.Width = 40
 
 	return Model{
-		loading:   true,
-		activeTab: 0,
-		searchBar: ti,
+		loading:    true,
+		activeTab:  0,
+		searchBar:  ti,
+		appVersion: version,
 		config:    cfg,
 		styles:    GetStyles(cfg.Theme),
 	}

@@ -38,7 +38,7 @@ func (m Model) View() string {
 |  _/ (_) |   /  | | | |\/| |  _  | .  |
 |_|  \___/|_|_\  |_| |_|  |_|_| |_|_|\_|`
 		headerBuilder.WriteString(m.styles.Title.Render(strings.TrimPrefix(titleArt, "\n")) + "\n\n")
-		headerBuilder.WriteString(m.styles.Description.Render("Advanced port manager ") + m.styles.Version.Render("v0.1.0") + "\n")
+		headerBuilder.WriteString(m.styles.Description.Render("Advanced port manager ") + m.styles.Version.Render(m.appVersion) + "\n")
 		headerStr := headerBuilder.String()
 
 		// --- 2. TABS ---
