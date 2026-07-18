@@ -1,0 +1,49 @@
+version: 2
+project_name: portman
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+
+archives:
+  - format: tar.gz
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+
+nfpms:
+  - vendor: "Tahriel Medhi"
+    homepage: "https://github.com/thejavator/portman"
+    maintainer: "Tahriel Medhi"
+    description: "Advanced Process & Port Manager for macOS and Linux"
+    license: "MIT"
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/local/bin
+
+brews:
+  - repository:
+      owner: thejavator
+      name: portman
+    directory: Formula
+    homepage: "https://github.com/thejavator/portman"
+    description: "Advanced Process & Port Manager"
+    license: "MIT"
+    test: |
+      system "#{bin}/portman --version"
